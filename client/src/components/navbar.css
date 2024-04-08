@@ -1,0 +1,26 @@
+.navbar {
+    position: fixed; /* Fixed position to stay at the top */
+    top: 0; /* Align to the top */
+    width: 100%; /* Take full width */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(36, 36, 75); /* Dark blue background color */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Add padding */
+  }
+  
+  .navbar-title {
+    text-align: center; /* Center align the content */
+  }
+  
+  .navbar-links button {
+    background-color: rgb(36, 36, 75); ; 
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    padding: 8px 16px; /* Padding */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Cursor style */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+  }
+  

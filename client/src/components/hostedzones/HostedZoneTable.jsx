@@ -43,14 +43,20 @@ const HostedZonesTable = ({ hostedZones }) => {
     };
 
     return (
-        <div>
-            <h2>Hosted Zones Table</h2>
-            <button onClick={handleDeleteSelected}>Delete Selected</button>
+        <div  className='container'>
+
+            <div className="header-container">
+                <h2>Hosted zones</h2>
+                <div className='button-container'>
+                <button onClick={handleDeleteSelected} >Delete</button>
+                <button onClick={()=>{navigate('/createZone')}} >Create</button>
+                </div>
+            </div>
             <table className="hosted-zones-table"> {/* Add class for styling */}
                 <thead>
                     <tr>
                         <th></th>
-                        <th>Name</th>
+                        <th>Hosted Zone</th>
                         <th>Public</th>
                         <th>Description</th>
                         <th>Record Count</th>

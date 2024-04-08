@@ -2,37 +2,29 @@
   text-align: center;
 }
 
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
-
 .navbar {
+  position: fixed; /* Fixed position to stay at the top */
+  top: 0; /* Align to the top */
+  width: 100%; /* Take full width */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(19, 19, 19);
-  color: white;
-  padding: 10px;
+  background-color: rgb(36, 36, 75); /* Dark blue background color */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Add padding */
 }
 
-.navbarLinks {
-  display: flex;
-  margin-right: 20px;
+.navbar-title {
+  text-align: center; /* Center align the content */
 }
 
-.navbarLinks span {
-  margin: 0px;
-  padding: 0px;
-  display: flex;
-  align-items: center;
+.navbar-links button {
+  background-color: rgb(36, 36, 75); ; 
+  color: white; /* Text color */
+  border: none; /* Remove border */
+  padding: 8px 16px; /* Padding */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Cursor style */
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
 }
 
-.navbar a {
-  color: white;
-  text-decoration: none;
-  font-size: 20px;
-  margin-right: 20px;
-}

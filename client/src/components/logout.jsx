@@ -1,22 +1,29 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
+// import  } from 'react-router-dom';
+// import {useNavigate}
 import { useNavigate } from 'react-router-dom';
-import { setAccessKeyId, setSecretAccessKey, setRegion,setSelectedHostedZone } from './redux/reducers';
+import { setAccessKeyId, setSecretAccessKey, setRegion } from './redux/reducers';
 
 const Logout = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  useEffect(()=>{
+  const handleLogout = () => {
+    // Clear Redux variables
     dispatch(setAccessKeyId(''));
     dispatch(setSecretAccessKey(''));
     dispatch(setRegion(''));
-    dispatch(setSelectedHostedZone(null));
-    // Navigate to home page
-    navigate('/');
-  },[]);
 
-  return null;
+    // Navigate to home page
+    navigate('/')
+  };
+
+  return (
+    <div>
+      <button onClick={handleLogout}>Logout</button>
+    </div>
+  );
 };
 
 export default Logout;

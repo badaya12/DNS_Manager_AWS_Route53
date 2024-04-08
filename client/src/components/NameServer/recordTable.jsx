@@ -38,6 +38,8 @@ export const RecordsTable = ({ records }) => {
       .then((response) => {
         console.log('Records deleted successfully');
         setSelectedRecords([]);
+        // navigate('/getRecords');
+        window.location.reload();
         // Handle any additional logic after deletion, such as updating UI
       })
       .catch((error) => {

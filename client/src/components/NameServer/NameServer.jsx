@@ -31,7 +31,7 @@ const NameServer = () => {
                 Name: concatenatedDomainName,
                 Type: recordType,
                 TTL: parseInt(ttl),
-                ResourceRecords: [{ Value: recordValue }]
+                ResourceRecords: [{ Value: `${recordValue}` }]
               }
             }
           ]
@@ -47,10 +47,12 @@ const NameServer = () => {
     // Make a POST request using Axios with the specified URL
     axios.post('/api/login', requestBody)
       .then(response => {
-        console.log(response.data); // Handle the response data
+        // console.log(response.data); // Handle the response data
+        navigate('/getRecords');
       })
       .catch(error => {
         console.error('There was a problem with the Axios request:', error);
+        alert("Record Value Invalid")
       });
   };
 
@@ -68,12 +70,19 @@ const NameServer = () => {
     />
 
   </div>
-  <input
-    type="text"
-    placeholder="Record Type (e.g., A, AAAA, CNAME)"
-    value={recordType}
-    onChange={(e) => setRecordType(e.target.value)}
-  />
+  <select id="recordType" value={recordType} onChange={(e) => setRecordType(e.target.value)}>
+          <option value="">Select Record Type</option>
+          <option value="MX">MX - Specifies mail servers</option>
+          <option value="A">A - Routes traffic to an IPv4 address and some AWS resources</option>
+          <option value="AAAA">AAAA - Routes traffic to an IPv6 address and some AWS resources</option>
+          <option value="TXT">TXT — Used to verify email senders and for application-specific values</option>
+          <option value="PTR">PTR - Maps an IP address to a domain name</option>
+          <option value="SRV">SRV-Application-specific values that identify server</option>
+          <option value="NAPTR">NAPTR — Used by DDDS applications</option>
+          <option value="CAA">CAA — Restricts CAs that can create SSL/TLS certificates for the domain</option>
+          <option value="DS">DS - Delegation Signer, used to establish a chain of trust for DNSSEC</option>
+          {/* Add more options as needed */}
+        </select>
   <textarea
     placeholder="Record Value (one value per line)"
     value={recordValue.join('\n')} // Join array elements with newline character

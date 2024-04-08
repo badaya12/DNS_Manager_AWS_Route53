@@ -1,5 +1,15 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  background-image: none;
+}
+
 .records-table-container {
     font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   .records-table {
@@ -31,22 +41,10 @@
     margin-top: 0;
   }
   
-  .records-table button {
-    margin-top: 10px;
-    padding: 8px 16px;
-    background-color: #f44336;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
   
-  .records-table button:hover {
-    background-color: #d32f2f;
-  }
   .delete-button {
-    background-color: #ff4d4f; /* Red background color */
-    color: white; /* Text color */
+    background-color: #f2f2f2; /* Red background color */
+    color: rgb(44, 41, 41); /* Text color */
     border: none; /* Remove border */
     padding: 10px 20px; /* Padding */
     font-size: 16px; /* Font size */
@@ -57,22 +55,22 @@
   }
   
   .delete-button:hover {
-    background-color: #ff6666; /* Darker red on hover */
+    color : black
   }
   
   .delete-button:active {
-    background-color: #ff3333; /* Even darker red when clicked */
+    background-color: rgb(44, 41, 41) /* Even darker red when clicked */
   }
   .table-header {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* margin-bottom: 10px; */
+    padding-top: 100px;
   }
   
   .create-button {
-    background-color: #ff4d4f; /* Red background color */
-    color: white; /* Text color */
+    background-color: #f2f2f2; /* Red background color */
+    color: rgb(44, 41, 41); /* Text color */
     border: none; /* Remove border */
     /* padding: 10px 20px; Padding */
     font-size: 16px; /* Font size */
@@ -83,15 +81,11 @@
   }
   
   .create-button:hover {
-    background-color: #ff6666; /* Darker red on hover */
+      color: black; /* Darker red on hover */
   }
   
   .create-button:active {
-    background-color: #ff3333; /* Even darker red when clicked */
+    background-color: black; /* Even darker red when clicked */
   }
-  .records-table caption {
-    font-size: 18px;
-    color: black;
-    font-weight: bold;
-  }
+  
   

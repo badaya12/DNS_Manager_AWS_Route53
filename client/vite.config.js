@@ -9,6 +9,12 @@ export default defineConfig({
     server: {    
         // this ensures that the browser opens upon server start
         open: true,
+        proxy:{
+            '/api': {
+                target: 'http://localhost:3001',
+                secure: false,
+              },
+        },
         // this sets a default port to 3000  
         port: 3000, 
     },

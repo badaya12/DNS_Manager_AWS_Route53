@@ -8,13 +8,14 @@ import CreateZone from './components/hostedzones/createZone';
 import GetRecords from './components/NameServer/getRecords';
 import Parser from './components/NameServer/parseJson';
 import Logout from './components/logout';
-// import { Navbar } from './components/Navbar';
+import { Navbar } from './components/Navbar';
 function App() {
   const { accessKeyId, secretAccessKey, region } = useSelector((state) => state.auth); // Access secretKeyId from Redux store
   return (
     <>    
-      {/* <Navbar /> */}
+
       <Router>
+      <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
           {accessKeyId !== '' &&
@@ -23,7 +24,6 @@ function App() {
           {accessKeyId !== '' && <Route path="/createZone" element={<CreateZone />} />}
           {accessKeyId !== '' && <Route path="/getRecords" element={<GetRecords />} />}
           {accessKeyId !== '' && <Route path="/parser" element={<Parser />} />}
-          {accessKeyId !== '' && <Route path="/logout" element={<Logout />} />}
         </Routes>
         
       </Router>
