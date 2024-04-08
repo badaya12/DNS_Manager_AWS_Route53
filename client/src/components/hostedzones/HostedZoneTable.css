@@ -1,0 +1,28 @@
+.hosted-zones-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.hosted-zones-table th, .hosted-zones-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.hosted-zones-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+.hosted-zones-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.hosted-zones-table tbody tr:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.zone-name {
+    color: blue;
+    text-decoration: underline;
+}

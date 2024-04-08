@@ -1,0 +1,97 @@
+.records-table-container {
+    font-family: Arial, sans-serif;
+  }
+  
+  .records-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .records-table th,
+  .records-table td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+  }
+  
+  .records-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+  }
+  
+  .records-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .records-table tbody tr:hover {
+    background-color: #e9e9e9;
+  }
+  
+  .records-table input[type="checkbox"] {
+    margin-top: 0;
+  }
+  
+  .records-table button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .records-table button:hover {
+    background-color: #d32f2f;
+  }
+  .delete-button {
+    background-color: #ff4d4f; /* Red background color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Padding */
+    font-size: 16px; /* Font size */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor style */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    /* justify-content: e; */
+  }
+  
+  .delete-button:hover {
+    background-color: #ff6666; /* Darker red on hover */
+  }
+  
+  .delete-button:active {
+    background-color: #ff3333; /* Even darker red when clicked */
+  }
+  .table-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-bottom: 10px; */
+  }
+  
+  .create-button {
+    background-color: #ff4d4f; /* Red background color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    /* padding: 10px 20px; Padding */
+    font-size: 16px; /* Font size */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor style */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    /* justify-content: e; */
+  }
+  
+  .create-button:hover {
+    background-color: #ff6666; /* Darker red on hover */
+  }
+  
+  .create-button:active {
+    background-color: #ff3333; /* Even darker red when clicked */
+  }
+  .records-table caption {
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+  }
+  
