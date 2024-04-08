@@ -45,7 +45,7 @@ const NameServer = () => {
 
     console.log(secretAccessKey);
     // Make a POST request using Axios with the specified URL
-    axios.post('http://localhost:3001/login', requestBody)
+    axios.post('/api/login', requestBody)
       .then(response => {
         console.log(response.data); // Handle the response data
       })

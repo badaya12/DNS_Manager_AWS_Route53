@@ -15,7 +15,7 @@ const GetHostedZone = () => {
         secretAccessKey: secretAccessKey,
         region: region
       };
-      const response = await axios.get('http://localhost:3001/api/getZone', { params: requestBody });
+      const response = await axios.get('/api/getZone', { params: requestBody });
       console.log(response.data.hostedZones);
       setHostedZones(response.data.hostedZones);
 

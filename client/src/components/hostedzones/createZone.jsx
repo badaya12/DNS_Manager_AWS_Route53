@@ -15,7 +15,7 @@ const CreateZone = () => {
     try {
       setLoading(true);
       setError(null);
-      const response = await axios.post('http://localhost:3001/api/createZone', {
+      const response = await axios.post('/api/createZone', {
         accessKeyId,
         secretAccessKey,
         region,
