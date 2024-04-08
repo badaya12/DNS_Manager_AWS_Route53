@@ -34,7 +34,7 @@ export const RecordsTable = ({ records }) => {
         region: region,
         hostedZoneId : SelectedhostedZone.Id
     }
-    axios.delete('http://localhost:3001/deleteRecord', {data : data})
+    axios.delete('http://localhost:3001/api/deleteRecord', {data : data})
       .then((response) => {
         console.log('Records deleted successfully');
         setSelectedRecords([]);

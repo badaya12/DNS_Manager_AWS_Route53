@@ -2,15 +2,18 @@ import express from 'express'
 import cors from 'cors'
 // import {router as awsRouter}from './routes/aws';
 import AWS from 'aws-sdk';
-
+import path from 'path';
 
 const app = express();
 
 app.use(express.json());
 app.use(cors());
 
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, '/client/dist')));
+
 // app.use("/Aws",awsRouter)
-app.post('/authorize', (req, res) => {
+app.post('/api/authorize', (req, res) => {
   // Extract credentials from the request body
   const { accessKeyId, secretAccessKey, region } = req.body;
 
@@ -39,7 +42,7 @@ app.post('/authorize', (req, res) => {
   
   
 });
-app.post("/login", async (req, res) => {
+app.post("/api/login", async (req, res) => {
     try {
         const { params } = req.body;
         const { accessKeyId, secretAccessKey, region } = req.body;
@@ -67,7 +70,7 @@ app.post("/login", async (req, res) => {
     }
 });
 
-app.get('/getZone', async (req, res) => {
+app.get('/api/getZone', async (req, res) => {
     try {
       const { accessKeyId, secretAccessKey, region } = req.query;
   
@@ -95,7 +98,7 @@ app.get('/getZone', async (req, res) => {
     }
   });
 
-  app.post('/createZone', async (req, res) => {
+  app.post('/api/createZone', async (req, res) => {
     try {
       const { accessKeyId, secretAccessKey, region, domainName } = req.body;
   
@@ -121,7 +124,7 @@ app.get('/getZone', async (req, res) => {
       res.status(500).json({ success: false, error: 'Failed to create hosted zone' });
     }
   });
-  app.delete('/deleteRecord', async (req, res) => {
+  app.delete('/api/deleteRecord', async (req, res) => {
     try {
       const recordsToDelete = req.body.records;
       
@@ -158,7 +161,7 @@ app.get('/getZone', async (req, res) => {
     }
   });
 
-  app.get('/getRecords', async (req, res) => {
+  app.get('/api/getRecords', async (req, res) => {
     try {
         const { accessKeyId, secretAccessKey, region,hostedZoneId} = req.query;
       
@@ -188,7 +191,7 @@ app.get('/getZone', async (req, res) => {
     }
 });
 
-app.delete('/deleteHostedZone', async (req, res) => {
+app.delete('/api/deleteHostedZone', async (req, res) => {
   try {
       const { accessKeyId, secretAccessKey, region,hostedZoneId} = req.body;
     // Construct params to delete the hosted zone
@@ -212,7 +215,8 @@ app.delete('/deleteHostedZone', async (req, res) => {
   }
 });
 
-app.get('/', (req, res) => {
-    res.send('Welcome to the API!');
-  });
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+})
 app.listen(3001,()=>{console.log("server started")});
+

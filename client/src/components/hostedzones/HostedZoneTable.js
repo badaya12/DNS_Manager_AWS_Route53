@@ -32,7 +32,7 @@ const HostedZonesTable = ({ hostedZones }) => {
             region: region
         }
         try {
-            await axios.delete('http://localhost:3001/deleteHostedZone',{data:data});
+            await axios.delete('http://localhost:3001/api/deleteHostedZone',{data:data});
             console.log('Selected hosted zone deleted successfully');
             setSelectedZone(null);
             // Optionally, you can update the UI or perform any additional actions after deletion

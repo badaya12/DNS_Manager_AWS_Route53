@@ -30,7 +30,7 @@ const HomePage = () => {
       region: regionInput
     };
 
-    axios.post('http://localhost:3001/authorize', requestData)
+    axios.post('http://localhost:3001/api/authorize', requestData)
       .then((response) => {
         console.log('Authorization successful:', response.data);
         dispatch(setAccessKeyId(accessKeyIdInput));
