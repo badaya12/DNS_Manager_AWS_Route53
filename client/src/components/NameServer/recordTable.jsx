@@ -3,10 +3,13 @@ import axios from 'axios';
 import { useSelector } from 'react-redux';
 import './recordTable.css';
 import { useNavigate } from 'react-router-dom';
+
 export const RecordsTable = ({ records }) => {
   const navigate = useNavigate();
-   const [selectedRecords, setSelectedRecords] = useState([]);
-   const { accessKeyId, secretAccessKey, region ,SelectedhostedZone} = useSelector((state) => state.auth);
+  const [selectedRecords, setSelectedRecords] = useState([]);
+  const [selectedType, setSelectedType] = useState('');
+  const { accessKeyId, secretAccessKey, region, SelectedhostedZone } = useSelector((state) => state.auth);
+
   const handleCheckboxChange = (record) => {
     const isSelected = selectedRecords.some(
       (r) => r.Name === record.Name && r.Type === record.Type
@@ -27,14 +30,14 @@ export const RecordsTable = ({ records }) => {
       return;
     }
     console.log(selectedRecords);
-    const data = { 
-        records: selectedRecords, 
-        accessKeyId: accessKeyId,
-        secretAccessKey: secretAccessKey,
-        region: region,
-        hostedZoneId : SelectedhostedZone.Id
+    const data = {
+      records: selectedRecords,
+      accessKeyId: accessKeyId,
+      secretAccessKey: secretAccessKey,
+      region: region,
+      hostedZoneId: SelectedhostedZone.Id
     }
-    axios.delete('/api/deleteRecord', {data : data})
+    axios.delete('/api/deleteRecord', { data: data })
       .then((response) => {
         console.log('Records deleted successfully');
         setSelectedRecords([]);
@@ -47,15 +50,23 @@ export const RecordsTable = ({ records }) => {
       });
   };
 
+  // Filter records based on selected type
+  const filteredRecords = selectedType ? records.filter(record => record.Type === selectedType) : records;
+
   return (
     <div className="records-table-container">
       <div className="table-header">
         <h2>Records Table</h2>
         <button className="delete-button" onClick={handleDeleteSelected}>Delete</button>
-        <button className='create-button' onClick={()=>{navigate('/server')}}>Create  </button>
+        <button className='create-button' onClick={() => { navigate('/server') }}>Create  </button>
+        <select value={selectedType} onChange={(e) => setSelectedType(e.target.value)}>
+          <option value="">Filter by Type</option>
+          {Array.from(new Set(records.map(record => record.Type))).map((type, index) => (
+            <option key={index} value={type}>{type}</option>
+          ))}
+        </select>
       </div>
-      <table className="records-table" RecordsTable>
-      {/* <caption>Records Table</caption>   */}
+      <table className="records-table">
         <thead>
           <tr>
             <th>Select</th>
@@ -66,7 +77,7 @@ export const RecordsTable = ({ records }) => {
           </tr>
         </thead>
         <tbody>
-          {records.map((record, index) => (
+          {filteredRecords.map((record, index) => (
             <tr key={index}>
               <td>
                 <input

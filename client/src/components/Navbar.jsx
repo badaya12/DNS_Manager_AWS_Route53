@@ -1,12 +1,12 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setAccessKeyId, setSecretAccessKey, setRegion, setSelectedHostedZone } from './redux/reducers';
+import { useSelector,useDispatch } from 'react-redux';
 import './navbar.css';
 export const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  const { accessKeyId} = useSelector((state) => state.auth);
   const handleLogout = () => {
     // Dispatch actions to reset access key ID, secret access key, region, and hosted zone
     dispatch(setAccessKeyId(''));
@@ -22,10 +22,10 @@ export const Navbar = () => {
       <div className="navbar-title">
         <h1>DNS-Manager</h1>
       </div>
-      <div className="navbar-links">
+      {accessKeyId && <div className="navbar-links">
         {/* Logout button with handleLogout function */}
         <button onClick={handleLogout}>Logout</button>
-      </div>
+      </div>}
     </div>
   );
 };
