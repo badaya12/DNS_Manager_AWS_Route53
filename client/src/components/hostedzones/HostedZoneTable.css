@@ -1,4 +1,4 @@
-.hosted-zones-table {
+/* .hosted-zones-table {
     width: 100%;
     border-collapse: collapse;
 }
@@ -25,4 +25,82 @@
 .zone-name {
     color: blue;
     text-decoration: underline;
+} */
+
+/* HostedZonesTable.css */
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
 }
+
+/* Container styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Heading styling */
+h2 {
+    color: #333;
+}
+
+/* Button styling */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Table styling */
+.hosted-zones-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.hosted-zones-table th, .hosted-zones-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.hosted-zones-table th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.hosted-zones-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.hosted-zones-table tr:hover {
+    background-color: #ddd;
+}
+
+/* Zone name styling */
+.zone-name {
+    cursor: pointer;
+    color: #007bff;
+}
+
+.zone-name:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
