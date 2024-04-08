@@ -16,7 +16,7 @@ const GetRecords = () => {
         region: region,
         hostedZoneId : SelectedhostedZone.Id
       };
-      const response = await axios.get('http://localhost:3001/getRecords', { params: requestBody });
+      const response = await axios.get('http://localhost:3001/api/getRecords', { params: requestBody });
       console.log(response);
       setRecords(response.data.Records);
       console.log(records);

@@ -12,8 +12,7 @@ import Logout from './components/logout';
 function App() {
   const { accessKeyId, secretAccessKey, region } = useSelector((state) => state.auth); // Access secretKeyId from Redux store
   return (
-    
-    <div>
+    <>    
       {/* <Navbar /> */}
       <Router>
         <Routes>
@@ -28,7 +27,7 @@ function App() {
         </Routes>
         
       </Router>
-    </div>
+      </>
     
   );
 }
