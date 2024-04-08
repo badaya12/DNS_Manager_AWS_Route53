@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setAccessKeyId, setSecretAccessKey, setRegion, setSelectedHostedZone } from './redux/reducers';
-import './Navbar.css';
+import './navbar.css';
 export const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();

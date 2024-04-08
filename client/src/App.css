@@ -1,7 +1,6 @@
 .App {
   text-align: center;
 }
-
 .navbar {
   position: fixed; /* Fixed position to stay at the top */
   top: 0; /* Align to the top */
