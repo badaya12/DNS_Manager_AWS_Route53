@@ -1,0 +1,51 @@
+.create-zone {
+    margin: 20px; /* Adjust margin as needed */
+    padding: 20px;
+    background-color: #f7f7f7; /* Adjust background color as needed */
+    border-radius: 8px; /* Adjust border radius as needed */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adjust box shadow as needed */
+    justify-content: center;
+    width :60%;
+    align-items: center;
+  }
+  
+  .create-zone h2 {
+    margin-bottom: 20px; /* Adjust margin bottom as needed */
+  }
+  
+  .input-group {
+    margin-bottom: 15px; /* Adjust margin bottom as needed */
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 5px; /* Adjust margin bottom as needed */
+  }
+  
+  .input-group input[type="text"],
+  .input-group input[type="checkbox"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .input-group input[type="checkbox"] {
+    width: auto;
+  }
+  
+  button {
+    background-color: #007bff; /* Adjust button background color as needed */
+    color: #fff; /* Adjust button text color as needed */
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Adjust hover background color as needed */
+  }
+  

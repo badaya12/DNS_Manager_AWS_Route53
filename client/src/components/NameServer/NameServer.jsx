@@ -59,6 +59,7 @@ const NameServer = () => {
   return (
     
     <div className='container'>
+      <button className='go-back-button' onClick = {()=>{navigate('/getZone')}}>Go Back</button>
           {SelectedhostedZone && <span className="selected-zone-label">{SelectedhostedZone.Name}</span>}
   <div className="input-group">
     <input

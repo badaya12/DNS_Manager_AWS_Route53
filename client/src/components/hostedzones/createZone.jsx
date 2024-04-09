@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
-
+import './createZone.css';
 const CreateZone = () => {
   const [domainName, setDomainName] = useState('');
   const [description, setDescription] = useState('');
