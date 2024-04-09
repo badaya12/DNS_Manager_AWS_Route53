@@ -20,7 +20,7 @@ const NameServer = () => {
   }
   const handleCreateRecordSet = () => {
     // Construct the request body
-    const concatenatedDomainName = SelectedhostedZone ? `${domainName}.${SelectedhostedZone.Name}` : '';
+    const concatenatedDomainName = domainName ? `${domainName}.${SelectedhostedZone.Name}` : `${SelectedhostedZone.Name}`;
     const requestBody = {
       params: {
         ChangeBatch: {
